@@ -8,13 +8,13 @@ version := "0.7.3"
 
 organization := "com.actionml"
 
-scalaVersion := "2.11.11"
+scalaVersion := "2.11.6"
 
 scalaVersion in ThisBuild := "2.11.11"
 
 val mahoutVersion = "0.13.0"
 
-val pioVersion = "0.12.0-incubating"
+val pioVersion = "0.12.1-incubating"
 
 val elasticsearchVersion = "5.5.2"
 
