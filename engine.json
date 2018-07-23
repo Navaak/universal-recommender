@@ -24,7 +24,7 @@
     "algorithms": [
         {
             "comment": "simplest setup where all values are default, popularity based backfill, must add eventsNames",
-            "name": "navaak",
+            "name": "ur",
             "params": {
                 "appName": "navaak",
                 "indexName": "tracks",

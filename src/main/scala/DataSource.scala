@@ -73,7 +73,7 @@ class DataSource(val dsp: DataSourceParams)
       appName = dsp.appName,
       entityType = Some("user"),
       eventNames = Some(eventNames),
-      targetEntityType = Some(Some("item")))(sc).repartition(sc.defaultParallelism)
+      targetEntityType = Some(Some("track")))(sc).repartition(sc.defaultParallelism)
 
     // now separate the events by event name
     val eventRDDs: List[(ActionID, RDD[(UserID, ItemID)])] = eventNames.map { eventName =>
@@ -93,7 +93,7 @@ class DataSource(val dsp: DataSourceParams)
     // aggregating all $set/$unsets for metadata fields, which are attached to items
     val fieldsRDD: RDD[(ItemID, PropertyMap)] = PEventStore.aggregateProperties(
       appName = dsp.appName,
-      entityType = "item")(sc).repartition(sc.defaultParallelism)
+      entityType = "track")(sc).repartition(sc.defaultParallelism)
     //    logger.debug(s"FieldsRDD\n${fieldsRDD.take(25).mkString("\n")}")
 
     // Have a list of (actionName, RDD), for each action
